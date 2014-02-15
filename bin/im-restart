@@ -2,7 +2,7 @@
 
 # This script is used to update
 
-. ./-im-git-vars
+. ./-im-vars
 
 DEPLOYMENT_BRANCH=$(cat ./configuration/cat-deployment-branch)
 CONFIGURATION_BRANCH=$(cat ./cat-configuration-branch)
