@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Make easy remote install from github
 echo "Immutables.org: installing provisioning scripts to $(pwd)"
 
 git clone https://github.com/immutables/provisioning.git
