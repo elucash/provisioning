@@ -7,6 +7,8 @@ Uncustomized sample installation could be done with this line
 curl -L https://raw.github.com/immutables/provisioning/master/install | bash
 ```
 
+What you need to do is to create directory, change to that directory and launch above command.
+All new scripts and repositories will be downloaded to current directory.
 Customize by exporting special variables:
 
 ```sh
