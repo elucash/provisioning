@@ -13,5 +13,5 @@ echo $GIT_CONFIGURATION_BRANCH>cat-configuration-branch
 
 ./im-reset
 
-echo "Installed configuration: $GIT_CONFIGURATION_BRANCH"
+echo "======== Installed configuration: $GIT_CONFIGURATION_BRANCH ========"
 echo "Run ./im-restart to update and launch"
