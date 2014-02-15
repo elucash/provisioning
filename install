@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Make easy remote install from github
-echo "Installing provisioning scripts to $(pwd)"
+echo "Immutables.org: installing provisioning scripts to $(pwd)"
 
 git clone https://github.com/immutables/provisioning.git
 cp -rf ./provisioning/bin/* ./
@@ -9,10 +9,10 @@ rm -rf ./provisioning
 
 . ./-im-git-vars
 
-# writing configuration branch to be used in im-configuration-reset
+# writing configuration branch to be used in im-reset
 echo $GIT_CONFIGURATION_BRANCH>cat-configuration-branch
 
 ./im-reset
 
-echo "Installed TW with configuration: $CONFIGURATION_BRANCH"
-echo '<<<'
+echo "Installed configuration: $CONFIGURATION_BRANCH"
+echo "Run ./im-restart to update and launch"
