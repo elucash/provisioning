@@ -16,4 +16,4 @@ export IM_ORIGIN=https://github.com/immutables
 export IM_PRESET=production
 ```
 
-It is highly recommended to create your one single copy-paste command installation with customization.
+It is highly recommended to create your own single copy-paste command installation with customization.
