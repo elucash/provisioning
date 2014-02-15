@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Brutal reset of configuration branch.
+# It is expected that application will not run during this operation
+
+. ./-im-vars
+
+CONFIGURATION_BRANCH=$1
+if [ ! -z "$CONFIGURATION_BRANCH" ]
+then
+  echo "$CONFIGURATION_BRANCH" > cat-configuration-branch
+fi
+CONFIGURATION_BRANCH=$(cat ./cat-configuration-branch)
+
+echo ">>> Reset configuration and deployment $CONFIGURATION_BRANCH"
+
+# We clear old configuration repository and clone new repo tracking only specified branch
+rm -rf configuration
+
+# commented out faster path that require git 1.7.10+
+#git clone $GIT_ORIGIN_CONFIGURATION --branch $CONFIGURATION_BRANCH --single-branch configuration
+
+mkdir configuration
+cd configuration
+git init
+git remote add -t $CONFIGURATION_BRANCH -f origin $GIT_ORIGIN_CONFIGURATION
+git checkout $CONFIGURATION_BRANCH
+
+cd ..
+
+# Completely reset deployment to blank state
+rm -rf deployment
+
+mkdir deployment
+cd deployment
+git init
+git remote add -t _blank -f origin $GIT_ORIGIN_DEPLOYMENT
+git checkout _blank
+
+cd ..

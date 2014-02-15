@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# This script is used to update
+
+. ./-im-git-vars
+
+DEPLOYMENT_BRANCH=$(cat ./configuration/cat-deployment-branch)
+CONFIGURATION_BRANCH=$(cat ./cat-configuration-branch)
+
+echo ">>> Updating configuration branch: $CONFIGURATION_BRANCH"
+
+cd configuration
+git pull
+cd ..
+
+echo ">>> Checkout deployment repository branch: $DEPLOYMENT_BRANCH"
+
+cd deployment
+# make head detached so fetch would not refuse to fetch current branch
+git checkout -q $(git rev-parse HEAD)
+git branch -d $BRANCH 2> /dev/null
+git fetch $GIT_ORIGIN_DEPLOYMENT $DEPLOYMENT_BRANCH:$DEPLOYMENT_BRANCH
+cd ..
+
+. ./configuration/-lc-shutdown
+
+cd deployment
+git checkout $DEPLOYMENT_BRANCH
+cd ..
+
+. ./configuration/-lc-restart

@@ -1,0 +1,4 @@
+export GIT_ORIGIN_DEFAULT=https://github.com/immutables
+export GIT_CONFIGURATION_BRANCH=${IM_CONF:-master}
+export GIT_ORIGIN_CONFIGURATION=${IM_ORIGIN:-$GIT_ORIGIN_DEFAULT}/configuration.git
+export GIT_ORIGIN_DEPLOYMENT=${IM_ORIGIN:-$GIT_ORIGIN_DEFAULT}/deployment.git
