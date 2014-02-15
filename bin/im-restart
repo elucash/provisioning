@@ -7,13 +7,13 @@
 DEPLOYMENT_BRANCH=$(cat ./configuration/cat-deployment-branch)
 CONFIGURATION_BRANCH=$(cat ./cat-configuration-branch)
 
-echo ">>> Updating configuration branch: $CONFIGURATION_BRANCH"
+echo "======== Updating configuration branch: $CONFIGURATION_BRANCH ========"
 
 cd configuration
 git pull
 cd ..
 
-echo ">>> Checkout deployment repository branch: $DEPLOYMENT_BRANCH"
+echo "======== Checkout deployment repository branch: $DEPLOYMENT_BRANCH ========"
 
 cd deployment
 # make head detached so fetch would not refuse to fetch current branch

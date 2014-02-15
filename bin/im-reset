@@ -12,7 +12,7 @@ then
 fi
 CONFIGURATION_BRANCH=$(cat ./cat-configuration-branch)
 
-echo ">>> Reset configuration and deployment $CONFIGURATION_BRANCH"
+echo "======== Reset configuration: $CONFIGURATION_BRANCH ========"
 
 # We clear old configuration repository and clone new repo tracking only specified branch
 rm -rf configuration
