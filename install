@@ -6,12 +6,12 @@ git clone https://github.com/immutables/provisioning.git
 cp -rf ./provisioning/bin/* ./
 rm -rf ./provisioning
 
-. ./-im-git-vars
+. ./-im-vars
 
 # writing configuration branch to be used in im-reset
 echo $GIT_CONFIGURATION_BRANCH>cat-configuration-branch
 
 ./im-reset
 
-echo "Installed configuration: $CONFIGURATION_BRANCH"
+echo "Installed configuration: $GIT_CONFIGURATION_BRANCH"
 echo "Run ./im-restart to update and launch"

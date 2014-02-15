@@ -15,7 +15,7 @@ Customize by exporting special variables:
 # configuration and deployment git repository base
 export IM_ORIGIN=https://github.com/immutables
 # production branch in configuration repository
-export IM_PRESET=production
+export IM_CONFIGURATION=production
 ```
 
 It is highly recommended to create your own single copy-paste command installation with customization.
