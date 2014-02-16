@@ -5,7 +5,7 @@ curl -L https://raw.github.com/immutables/provisioning/master/install | bash
 ```
 
 What you need to do is to create directory, change to that directory and launch above command.
-All new scripts and repositories will be downloaded to current directory.
+All new scripts and repositories will be downloaded to the current directory.
 Customize by exporting special variables:
 
 ```sh
@@ -15,4 +15,4 @@ export IM_ORIGIN=https://github.com/immutables
 export IM_CONFIGURATION=production
 ```
 
-It is highly recommended to create your own single copy-paste command installation with customization.
+It is highly recommended to create your own single-line wrapper command installation with customization.
