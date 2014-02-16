@@ -1,7 +1,4 @@
-provisioning
-============
-
-Uncustomized sample installation could be done with this line
+Sample installation could be done with this line
 
 ```sh
 curl -L https://raw.github.com/immutables/provisioning/master/install | bash
