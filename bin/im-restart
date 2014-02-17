@@ -23,13 +23,13 @@ git fetch $GIT_ORIGIN_DEPLOYMENT $DEPLOYMENT_BRANCH:$DEPLOYMENT_BRANCH
 cd ..
 
 cd configuration
-. ./configuration/-lc-shutdown
-..
+. ./-lc-shutdown
+cd ..
 
 cd deployment
 git checkout $DEPLOYMENT_BRANCH
 cd ..
 
 cd configuration
-. ./configuration/-lc-restart
-..
+. ./-lc-restart
+cd ..
