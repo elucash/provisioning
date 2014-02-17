@@ -22,10 +22,14 @@ git branch -d $DEPLOYMENT_BRANCH 2> /dev/null
 git fetch $GIT_ORIGIN_DEPLOYMENT $DEPLOYMENT_BRANCH:$DEPLOYMENT_BRANCH
 cd ..
 
+cd configuration
 . ./configuration/-lc-shutdown
+..
 
 cd deployment
 git checkout $DEPLOYMENT_BRANCH
 cd ..
 
+cd configuration
 . ./configuration/-lc-restart
+..
