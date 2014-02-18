@@ -5,13 +5,6 @@
 
 . ./-im-vars
 
-CONFIGURATION_BRANCH=$1
-if [ ! -z "$CONFIGURATION_BRANCH" ]
-then
-  echo "$CONFIGURATION_BRANCH" > cat-configuration-branch
-fi
-CONFIGURATION_BRANCH=$(cat ./cat-configuration-branch)
-
 echo "======== Reset configuration: $CONFIGURATION_BRANCH ========"
 
 # We clear old configuration repository and clone new repo tracking only specified branch
