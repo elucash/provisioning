@@ -8,9 +8,6 @@ rm -rf ./provisioning
 
 . ./-im-vars
 
-# writing configuration branch to be used in im-reset
-echo $GIT_CONFIGURATION_BRANCH>cat-configuration-branch
-
 ./im-reset
 
 echo "======== Installed configuration: $GIT_CONFIGURATION_BRANCH ========"
