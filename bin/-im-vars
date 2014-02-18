@@ -1,4 +1,19 @@
-export GIT_ORIGIN_DEFAULT=https://github.com/immutables
-export GIT_CONFIGURATION_BRANCH=${IM_CONFIGURATION:-master}
-export GIT_ORIGIN_CONFIGURATION=${IM_ORIGIN:-$GIT_ORIGIN_DEFAULT}/configuration.git
-export GIT_ORIGIN_DEPLOYMENT=${IM_ORIGIN:-$GIT_ORIGIN_DEFAULT}/deployment.git
+CONFIGURATION_BRANCH_DEFAULT=master
+GIT_ORIGIN_DEFAULT=https://github.com/immutables
+
+export CONFIGURATION_BRANCH=$(cat ./cat-configuration-branch)
+if [ -z "$CONFIGURATION_BRANCH" ]
+then
+  export CONFIGURATION_BRANCH=${IM_CONFIGURATION:-$CONFIGURATION_BRANCH_DEFAULT}
+  echo "$CONFIGURATION_BRANCH" > cat-configuration-branch
+fi
+
+GIT_ORIGIN=$(cat ./cat-git-origin)
+if [ -z "$GIT_ORIGIN" ]
+then
+  export GIT_ORIGIN=${IM_ORIGIN:-$GIT_ORIGIN_DEFAULT}
+  echo "$GIT_ORIGIN" > cat-git-origin
+fi
+
+export GIT_ORIGIN_CONFIGURATION=$GIT_ORIGIN/configuration.git
+export GIT_ORIGIN_DEPLOYMENT=$GIT_ORIGIN/deployment.git
