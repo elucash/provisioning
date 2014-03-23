@@ -1,0 +1,15 @@
+#!/bin/bash
+
+trap : SIGTERM SIGINT
+
+INTERVAL_SECONDS=${WATCH_INTERVAL:-15}
+
+watch -n $INTERVAL_SECONDS ./im-check &
+
+WATCH_PID=$!
+wait $WATCH_PID
+if [[ $? -gt 128 ]]
+then
+  kill $WATCH_PID
+fi
+
