@@ -5,10 +5,10 @@
 
 cd configuration
 git remote update
-GIT_STATUS_OUTPUT=$(git status)
+GIT_STATUS_OUTPUT="$(git status)"
 cd ..
 
-if [[ $GIT_STATUS_OUTPUT == *branch is behind* ]]
+if [[ $GIT_STATUS_OUTPUT == *'branch is behind'* ]]
 then
   nohup ./im-restart &
   exit
@@ -16,10 +16,10 @@ fi
 
 cd deployment
 git remote update
-GIT_STATUS_OUTPUT=$(git status)
+GIT_STATUS_OUTPUT="$(git status)"
 cd ..
 
-if [[ $GIT_STATUS_OUTPUT == *branch is behind* ]]
+if [[ $GIT_STATUS_OUTPUT == *'branch is behind'* ]]
 then
   nohup ./im-restart &
   exit
