@@ -4,7 +4,6 @@
 
 . ./-im-vars
 
-DEPLOYMENT_BRANCH=$(cat ./configuration/cat-deployment-branch)
 CONFIGURATION_BRANCH=$(cat ./cat-configuration-branch)
 
 echo "======== Updating configuration branch: $CONFIGURATION_BRANCH ========"
@@ -12,6 +11,8 @@ echo "======== Updating configuration branch: $CONFIGURATION_BRANCH ========"
 cd configuration
 git pull
 cd ..
+
+DEPLOYMENT_BRANCH=$(cat ./configuration/cat-deployment-branch)
 
 echo "======== Checkout deployment repository branch: $DEPLOYMENT_BRANCH ========"
 
