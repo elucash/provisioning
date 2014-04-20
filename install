@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "======== Immutables.org: installing provisioning scripts to $(pwd) ========"
+echo "======== Installing provisioning scripts to $(pwd) ========"
 
 git clone https://github.com/immutables/provisioning.git
 cp -rf ./provisioning/bin/* ./
