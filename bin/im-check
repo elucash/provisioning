@@ -4,22 +4,26 @@
 # then call im-restart to apply any changes
 
 cd configuration
-git remote update
-GIT_STATUS_OUTPUT="$(git status)"
+GIT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+GIT_HEAD="$(git rev-parse HEAD)"
+GIT_REMOTE_HEAD="$(git ls-remote origin $GIT_BRANCH | awk '{print $1;}')"
+
 cd ..
 
-if [[ $GIT_STATUS_OUTPUT == *'branch is behind'* ]]
+if [[ "$GIT_HEAD" != "$GIT_REMOTE_HEAD" ]]
 then
   nohup ./im-restart &
   exit
 fi
 
 cd deployment
-git remote update
-GIT_STATUS_OUTPUT="$(git status)"
+GIT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+GIT_HEAD="$(git rev-parse HEAD)"
+GIT_REMOTE_HEAD="$(git ls-remote origin $GIT_BRANCH | awk '{print $1;}')"
+
 cd ..
 
-if [[ $GIT_STATUS_OUTPUT == *'branch is behind'* ]]
+if [[ "$GIT_HEAD" != "$GIT_REMOTE_HEAD" ]]
 then
   nohup ./im-restart &
   exit
