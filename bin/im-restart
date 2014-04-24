@@ -24,6 +24,7 @@ cd ..
 
 cd configuration
 . ./-lc-shutdown
+sleep $SHUTDOWN_DELAY_SECONDS
 cd ..
 
 cd deployment

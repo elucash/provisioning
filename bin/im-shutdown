@@ -1,7 +1,9 @@
 #!/bin/bash
 
+. ./-im-vars
 echo "========== Shutting down ==========="
 
 kill $(cat ./cat-nohup-pid)
 rm -f ./cat-nohup-pid
 . ./configuration/-lc-shutdown
+sleep $SHUTDOWN_DELAY_SECONDS

@@ -1,3 +1,4 @@
+export SHUTDOWN_DELAY_SECONDS=10
 CONFIGURATION_BRANCH_DEFAULT=master
 GIT_ORIGIN_DEFAULT=https://github.com/immutables
 
