@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo "============= Running run-watch-restart cycle  ================="
-./im-shutdown
+./im-shutdown > /dev/null 2>&1
 
-nohup ./im-cycle > im-cycle.log 2>&1 &
+nohup ./im-cycle > /dev/null 2>&1 &
 echo $! > cat-nohup-pid
 
 
