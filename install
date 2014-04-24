@@ -11,4 +11,5 @@ rm -rf ./provisioning
 ./im-reset
 
 echo "======== Installed configuration: $GIT_CONFIGURATION_BRANCH ========"
-echo "Run ./im-restart to update and launch"
+echo "Run ./im-restart to update and launch once"
+echo "Or run ./im-run to launch and watch for update and restart automatically"
