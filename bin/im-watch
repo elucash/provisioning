@@ -1,0 +1,15 @@
+#!/bin/bash
+
+. ./im-vars
+
+while true; do
+  sleep $WATCH_INTERVAL_SECONDS
+
+  ./im-check
+  if [ $? -ne 0 ]; then
+    rm -f im-last-restart.log
+    ./im-restart > im-last-restart.log 2>&1
+  fi
+done
+
+
