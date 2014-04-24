@@ -1,11 +1,13 @@
 #!/bin/bash
 
-echo "============= Running run-watch-restart cycle  ================="
+. ./-im-vars
+
+echo "======== Running run-watch-restart cycle  ========"
 ./im-shutdown > /dev/null 2>&1
 
 ./im-restart
 
 nohup ./im-watch > /dev/null 2>&1 &
 echo $! > cat-nohup-pid
-
+echo "======== Watching for git changes every $WATCH_INTERVAL_SECONDS seconds  ========"
 
