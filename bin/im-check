@@ -12,8 +12,7 @@ cd ..
 
 if [[ "$GIT_HEAD" != "$GIT_REMOTE_HEAD" ]]
 then
-  nohup ./im-restart &
-  exit
+  exit 1
 fi
 
 cd deployment
@@ -25,6 +24,7 @@ cd ..
 
 if [[ "$GIT_HEAD" != "$GIT_REMOTE_HEAD" ]]
 then
-  nohup ./im-restart &
-  exit
+  exit 1
 fi
+
+exit 0
