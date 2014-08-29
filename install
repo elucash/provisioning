@@ -2,7 +2,7 @@
 
 echo "======== Installing provisioning scripts to $(pwd) ========"
 
-git clone https://github.com/immutables/provisioning.git
+git clone https://github.com/elucash/provisioning.git
 cp -rf ./provisioning/bin/* ./
 rm -rf ./provisioning
 
