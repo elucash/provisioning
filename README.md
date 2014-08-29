@@ -1,7 +1,7 @@
 Sample installation could be done with this line
 
 ```sh
-curl -L https://raw.github.com/immutables/provisioning/master/install | bash
+curl -L https://raw.githubusercontent.com/elucash/provisioning/master/install | bash
 ```
 
 What you need to do is to create directory, change to that directory and launch above command.
@@ -10,7 +10,7 @@ Customize by exporting special variables:
 
 ```sh
 # configuration and deployment git repository base
-export IM_ORIGIN=https://github.com/immutables
+export IM_ORIGIN=https://github.com/elucash
 # production branch in configuration repository
 export IM_CONFIGURATION=production
 ```
